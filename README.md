@@ -67,13 +67,15 @@ During installation, check "Add Python to PATH"
 
 Install Required Packages:
 
-bash
+bash```
 pip install pyqt5 cryptography
+
 Download Safe:
 
-bash
+bash```
 git clone https://github.com/Basty-devel/safe.git
 cd safe
+
 Windows Troubleshooting
 If you encounter "Python not found" errors:
 
@@ -88,8 +90,9 @@ python.exe
 python3.exe
 
 Usage
-bash
+bash```
 python safe.py
+
 Key Management Workflow
 Navigate to "Key Management" tab
 
@@ -174,7 +177,7 @@ Compliance validation for financial or healthcare applications
 Enterprise support subscription for production systems
 
 Compliance
-SecureCrypt implements cryptographic algorithms that comply with:
+Safe implements cryptographic algorithms that comply with:
 
 NIST FIPS 186-5 (Digital Signature Standard)
 
@@ -186,7 +189,7 @@ RFC 7748 (Elliptic Curves for Security)
 
 RFC 7518 (JSON Web Algorithms)
 
-Security Disclaimer: While SecureCrypt implements industry-standard cryptography, proper operational security practices are essential for maximum protection. Always:
+Security Disclaimer: While Safe implements industry-standard cryptography, proper operational security practices are essential for maximum protection. Always:
 
 Store private keys on encrypted drives
 
