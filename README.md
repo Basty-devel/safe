@@ -1,57 +1,54 @@
-Safe - Enterprise Encryption Suite
+**Safe - Enterprise Encryption Suite**
 
 Safe is a professional-grade encryption application that implements military-grade cryptography with enforced security best practices. It combines modern cryptographic standards with an intuitive graphical interface to provide enterprise-level data protection.
 
 Key Security Features
-Military-Grade Cryptography:
+Military-Grade Cryptography
+RSA-3072: 128-bit security for key encapsulation
 
-RSA-3072 (128-bit security)
+ECC secp521r1: 256-bit security for key exchange
 
-ECC secp521r1 (256-bit security)
+AES-256-GCM: Authenticated encryption for data protection
 
-AES-256-GCM authenticated encryption
+Enforced Security Policies
+Strong Passphrases: 15+ characters with uppercase, lowercase, numbers, and special symbols required
 
-Enforced Security Policies:
+Key Rotation: Automatic 90-day rotation with visual expiration warnings
 
-15+ character passphrases with mixed character requirements
+Identity Verification: Mandatory fingerprint verification before encryption
 
-Automatic key rotation (90-day default)
+Secure Key Management
+PBKDF2-HMAC-SHA256: 600,000 iterations for key derivation
 
-Mandatory recipient identity verification
+Encrypted Key Storage: Proprietary .ekey format for private keys
 
-Secure Key Management:
+Storage Recommendations: Guidance for encrypted drive usage
 
-PBKDF2-HMAC-SHA256 key derivation (600,000 iterations)
+Performance Optimizations
+Large File Support: Chunked processing (64KB chunks)
 
-Encrypted key storage (.ekey format)
+Memory Efficiency: Minimal resource consumption
 
-Encrypted drive storage recommendations
-
-Large File Support:
-
-Chunked processing (64KB chunks)
-
-Memory-efficient operations
-
-Progress tracking with visual indicators
+Progress Tracking: Visual indicators for long operations
 
 Security Architecture
 Diagram
 Code
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+graph TD
+    A[User Data] --> B[Identity Verification]
+    B --> C[Secure Key Exchange]
+    C --> D[Hybrid Encryption]
+    D --> E[Encrypted Output]
+    
+    D --> F[Ephemeral ECDH]
+    D --> G[RSA Key Encapsulation]
+    D --> H[AES-GCM Encryption]
+    
+    I[Key Rotation] --> J[Automatic Expiration]
+    I --> K[Security Warnings]
+    
+    L[Key Storage] --> M[Encrypted Drives]
+    L --> N[PBKDF2 Protection]
 Installation
 Prerequisites
 Python 3.7+
@@ -67,17 +64,15 @@ During installation, check "Add Python to PATH"
 
 Install Required Packages:
 
-bash```
+bash
 pip install pyqt5 cryptography
-
 Download Safe:
 
-bash```
+bash
 git clone https://github.com/Basty-devel/safe.git
 cd safe
-
 Windows Troubleshooting
-If you encounter "Python not found" errors:
+If encountering "Python not found" errors:
 
 Open Settings > Apps > Apps & features
 
@@ -90,13 +85,12 @@ python.exe
 python3.exe
 
 Usage
-bash```
+bash
 python safe.py
-
 Key Management Workflow
 Navigate to "Key Management" tab
 
-Enter strong passphrase (15+ chars with mixed characters)
+Enter strong passphrase (15+ characters with mixed character types)
 
 Configure key rotation schedule
 
@@ -152,21 +146,25 @@ Key Exchange	ECDH with secp521r1	256-bit	NIST FIPS 186-4
 Key Derivation	HKDF-SHA256	256-bit	RFC 5869
 Data Encryption	AES-256-GCM	256-bit	NIST FIPS 197
 Key Storage	PBKDF2-HMAC-SHA256 (600K iters)	256-bit	NIST SP 800-132
-Passphrase Policy	15+ chars, mixed characters	-	OWASP ASVS
+Passphrase Policy	15+ chars, mixed characters	-	OWASP ASVS 4.0
 Threat Mitigation
-Threat Vector	SecureCrypt Protection
+Threat Vector	Safe Protection
 Weak Passphrases	Enforced complexity requirements
 Key Compromise	90-day automatic rotation
 MITM Attacks	Mandatory identity verification
 Brute Force Attacks	600K iteration PBKDF2 derivation
 Data Tampering	AES-GCM authentication tags
-Key Exposure	Encrypted drive storage requirement
+Key Exposure	Encrypted drive requirements
 Support
 Community Support
 GitHub Issues: https://github.com/Basty-devel/safe/issues
 
+Professional Support
+For enterprise deployments and custom implementations, contact:
+support@safe-encryption.com
+
 License
-SecureCrypt is licensed under the MIT License - see LICENSE for details.
+Safe is licensed under the MIT License - see LICENSE for details.
 
 Commercial Use Requirements:
 
@@ -189,7 +187,8 @@ RFC 7748 (Elliptic Curves for Security)
 
 RFC 7518 (JSON Web Algorithms)
 
-Security Disclaimer: While Safe implements industry-standard cryptography, proper operational security practices are essential for maximum protection. Always:
+Security Disclaimer:
+While Safe implements industry-standard cryptography, proper operational security practices are essential for maximum protection. Always:
 
 Store private keys on encrypted drives
 
@@ -201,4 +200,4 @@ Use 15+ character passphrases with mixed characters
 
 Conduct regular security audits for critical deployments
 
-For high-security environments, we recommend supplementing SecureCrypt with Hardware Security Modules (HSMs) and multi-factor authentication systems.
+For high-security environments, we recommend supplementing Safe with Hardware Security Modules (HSMs) and multi-factor authentication systems.
